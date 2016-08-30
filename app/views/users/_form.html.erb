@@ -1,7 +1,7 @@
 <%= form_for(@user) do |f| %>
   <%= render 'shared/error_messages', object: @user %>
 
-   <%= form_tag yield(:action) %>
+    <%= form_tag yield(:action) %>
 
   <%= f.label :name %>
   <%= f.text_field :name, class: 'form-control' %>
