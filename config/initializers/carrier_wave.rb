@@ -6,7 +6,8 @@ if Rails.env.production?
       # Configuration for Amazon S3
       :provider              => 'AWS',
       :aws_access_key_id     => ENV['AKIAIHX4BRY7VYVT7S4Q'],
-      :aws_secret_access_key => ENV['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']
+      :aws_secret_access_key => ENV['hyN+xVmOw99AAGx7+Lj6NOgUfUOMM5ijr+CMtycg'],
+      :region => ENV['Oregon']
     }
     config.fog_directory     =  ENV['my-sample-pics']
   end
