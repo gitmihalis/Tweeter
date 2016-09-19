@@ -12,4 +12,12 @@
     </strong>
     followers
   </a>
+  <% if @user.favorites.any? %>
+  <a href="<%= favorites_user_path(@user) %>">
+    <strong id="favorites" class="stat">
+      <%= @user.favorites.count %>
+    </strong>
+    favorites
+  </a>
+  <% end %>
 </div>

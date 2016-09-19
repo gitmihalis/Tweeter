@@ -15,5 +15,10 @@ class StaticPagesController < ApplicationController
 
   def contact
   end
+  
+  def favorites
+    @favorite = Favorite.new
+    @favorite_microposts = current_user.fav_feed.paginate(page: params[:page])
+  end
 
 end

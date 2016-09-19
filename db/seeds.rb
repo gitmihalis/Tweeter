@@ -38,3 +38,12 @@ follwing = users[2..50]
 followers = users[3..40]
 follwing.each { |followed| user.follow(followed) }
 followers.each { |follower| follower.follow(user) }
+
+# Favorites
+users = User.all
+favoriting_users = users[2..23]
+unowned_posts = Micropost.where(user_id:1).or( Micropost.where(user_id:2) )
+20.times do |n|
+  favoriting_users.each { |user| user.fav(unowned_posts[n+1])}
+end
+
