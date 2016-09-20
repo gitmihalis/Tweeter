@@ -5,20 +5,22 @@ $(document).on('turbolinks:load', function() {
 	
 	favBtn
 		.on('click', function(evt) {
-		  var	favStat = $('strong#favorites');
-			var $this = $(this),
+			// TODO fix issues with dynamic top margin causing
+			// glitchy floating aside when favoite star is pulsing!
+		  // var	favStat = $('strong#favorites');
+			var $this = $(this);
 
-			favStatClone = favStat.clone(true);
-					
-			favStat.addClass('pulse');
+			// favStatClone = favStat.clone(true);
+			//
+			// favStat.addClass('pulse');
 
 			$this.removeClass('empty-bg').addClass('full-bg');
 			$this.addClass('growspin').fadeTo('slow',0.5);
 			
-			setTimeout(function(){
-				favStat.before(favStatClone)
-				favStat.remove();			
-			}, 1000)
+			// setTimeout(function(){
+			// 	favStat.before(favStatClone)
+			// 	favStat.remove();
+			// }, 1000)
 
 		});
 		

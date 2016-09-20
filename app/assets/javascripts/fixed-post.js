@@ -4,10 +4,12 @@ $(document).on('turbolinks:load', function() {
 	var $window = $(window);
 
 	$window.scroll( function() {
-		var y = $window.scrollTop();
-		aside.css({
-			"margin-top": (y) + "px"
-		})
-	} );
+		if ( $window.width() > 991 ) {
+			var y = $window.scrollTop();
+			aside.css({
+				"margin-top": (y) + "px"
+			})
+		}
+	});
 
 });
