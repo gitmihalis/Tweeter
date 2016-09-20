@@ -1,5 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import 'https://fonts.googleapis.com/css?family=Poppins|Lato';
 
 /* mixins, variables, etc. */
 
@@ -36,6 +37,7 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
+	font-family: 'Poppins' ;
 }
 
 h1 {
@@ -57,6 +59,10 @@ h2 {
 p {
   font-size: 1.1em;
   line-height: 1.7em;
+}
+
+p, a, div {
+	font-family: 'Lato';
 }
 
 
@@ -103,7 +109,17 @@ footer {
   }
 }
 
+main {
+	padding-top: 50px;
+}
+
 /* sidebar */
+
+.fixed-aside {
+	display: block;
+	position: fixed;
+	z-index: 100;
+}
 
 aside {
   section.user_info {
@@ -143,11 +159,12 @@ aside {
 .stats {
   overflow: auto;
   margin-top: 0;
-  padding: 0;
+  padding: 10px 0 10px 0;
+	text-align: center;
   a {
     float: left;
     padding: 0 10px;
-    border-left: 1px solid $gray-lighter;
+    border-left: 1px solid $gray;
     color: gray;
     &:first-child {
       padding-left: 0;
@@ -155,12 +172,16 @@ aside {
     }
     &:hover {
       text-decoration: none;
-      color: blue;
+      color: darkslateblue;
     }
   }
   strong {
     display: block;
   }
+	
+	#favorites, #followers, #following {
+		text-align: center;
+	}
 }
 
 .user_avatars {
@@ -237,6 +258,7 @@ input {
   margin-left: 0;
 }
 
+
 /* miscellaneous */
 
 .debug_dump {
@@ -245,6 +267,11 @@ input {
   width: 100%;
   margin-top: 45px;
   @include box_sizing;
+}
+
+#shrug {
+	text-align: center;
+	font-size: 10em;
 }
 
 /* microposts */
@@ -278,14 +305,67 @@ input {
     margin-right: 10px;
     margin-top: 5px;
   }
-  .favorite {
-	  float: left;
-	  margin-right: 10px;
-	  margin-top: 5px;
-  }
+	
+	.favorite {
+		text-align: center;
+		display: block;
+		.save_favorite_form {
+			& > input {
+				width: 30px;
+				height: 100%;
+				transition: background .3s;
+				background-size: 20px 20px;
+						border: none;
+						transition: all .4s;
+			}
+		}
+	
+		.delete_favorite_form { 
+			& > input {
+				width: 30px;
+				height: 100%;
+				transition: background .3s;
+				background-size: 20px 20px;
+						border: none;
+			}
+		}
+	}
+  
+	// used for animating fav form
+	.full-bg {
+		background:url(star_fav_full.png) center no-repeat;
+	}
+	.empty-bg {
+		background:url(star_fav_empty.png) center no-repeat;
+	}	
+}
+
+// animations
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.7); color: gold; }
+    100% { transform: scale(1); }
+}
+.pulse {
+    animation: pulse .6s;
+		animation-iteration-count: 3;
+}
+
+@keyframes growspin {
+    25%  { transform: scale(1.1) }
+		50%  { transform: rotate(90deg) }
+    100% { transform: scale(0.6) }
+}
+
+.growspin {
+	animation: growspin 1s forwards;
 }
 
 aside {
+	padding-top: 10px;
+	border-radius: 4px;
+	background: lavender;
   textarea {
     height: 100px;
     margin-bottom: 5px;
@@ -298,4 +378,14 @@ span.picture {
     border: 0;
   }
 }
+
+.navbar {
+	background: #fff;
+	box-shadow: 0 2px 3px #bbb;
+	#logo {
+		color: darkslateblue;
+		text-shadow: 2px 1px lightblue;
+	}
+}
+
 

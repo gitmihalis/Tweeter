@@ -18,16 +18,16 @@
   </div>
 <% else %>
   <div class="center jumbotron">
-    <h1>Welcome to Litter</h1>
+    <h1>Welcome to Tweeter</h1>
 
     <h2>
-      This is was developed with the 
-      <a href="http://www.railstutorial.org/">Ruby on Rails Tutorial.</a>
+      The awesome
+      <a href="http://www.railstutorial.org/">Ruby on Rails Tutorial</a>
+			 will show you how to develop an app just like this one!
     </h2>
+		<p> Post messages to other Tweeters </p>
 
     <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
   </div>
 
-  <%= link_to image_tag("rails.png", alt: "Rails logo"),
-              'http://rubyonrails.org/' %>
 <% end %>
