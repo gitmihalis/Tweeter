@@ -1,0 +1,7 @@
+	<%= form_tag({:controller => 'favorites', :action => 'destroy', 
+								:id => current_user.id }, 
+								:method => 'delete', 
+								:class => 'delete_favorite_form' ) do %>
+		<%= hidden_field_tag 'micropost_id', micropost.id %>
+		<%= submit_tag "Unfavorite" %>
+	<% end %> 

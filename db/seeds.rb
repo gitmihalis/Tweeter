@@ -47,3 +47,9 @@ unowned_posts = Micropost.where(user_id:1).or( Micropost.where(user_id:2) )
   favoriting_users.each { |user| user.fav(unowned_posts[n+1])}
 end
 
+user = User.first
+4.times do |n|
+  micropost = Micropost.find(n + 1)
+  user.fav(micropost)
+end
+

@@ -9,12 +9,11 @@
     </section>
   </aside>
   <div class="col-md-8">
-    <h3><span class="glyphicon glyphicon-star" aria-hidden="true"></span> <%= @title %></h3>
+    <h3>Top <%= @title %></h3>
     <% if @user.favorites.any? %>
       <ul class="microposts">
         <%= render @favorites %>
       </ul>
-      <%= will_paginate @favorites %>
     <% end %>
   </div>
 </div>

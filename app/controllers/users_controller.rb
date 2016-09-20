@@ -82,7 +82,7 @@ class UsersController < ApplicationController
   def favorites
     @title = "Favorites"
     @user = User.find(params[:id])
-    @favorites = @user.fav_feed.paginate(page: params[:page])
+    @favorites = @user.fav_feed
     render 'show_favorite'
   end
 
