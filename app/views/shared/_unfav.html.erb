@@ -3,5 +3,5 @@
 								:method => 'delete', 
 								:class => 'delete_favorite_form' ) do %>
 		<%= hidden_field_tag 'micropost_id', micropost.id %>
-		<%= submit_tag "", class: 'full-bg' %>
+		<%= submit_tag "", class: 'full-star', data: {star: 'full'} %>
 	<% end %> 

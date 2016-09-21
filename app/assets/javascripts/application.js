@@ -15,3 +15,26 @@
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
+
+var ready = function() {
+
+	var favBtns = $('.save_favorite_form').children('input[data-star="empty"]');
+	var unFavBtns = $('.delete_favorite_form').children('input[data-star="full"]');
+
+	favBtns
+		.on('click', function() {
+
+			console.log('i fired on favBtns');
+				$(this).removeClass('empty-star').addClass('growspin full-star').fadeTo('slow',0.5);			
+
+
+		});
+
+	unFavBtns
+		.on('click', function() {
+			console.log('i fired on unFavBtns')
+				$(this).removeClass('.full-star').addClass('growspin empty-star').fadeTo('slow',0.5);			
+
+		});
+}
+$(document).on('turbolinks:load', ready);
