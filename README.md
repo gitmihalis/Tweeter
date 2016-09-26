@@ -1,4 +1,4 @@
-# Ruby on Rails Tutorial sample application
+# Tweeter is built from the Ruby on Rails Tutorial sample application
 
 This is my feature implementation to the sample application for
 [*Ruby on Rails Tutorial:
