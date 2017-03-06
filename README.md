@@ -5,6 +5,10 @@ This is my feature implementation to the sample application for
 Learn Web Development with Rails*](http://www.railstutorial.org/)
 by [Michael Hartl](http://www.michaelhartl.com/).
 
+## Customization by _Mihalis Fthenos_
+
+To show understanding and competence I implemented my own **favorites feature**, without aid from any tutorial or source code. Users can add and remove favorites that show up in their own favortires feed.
+
 ## License
 
 All source code in the [Ruby on Rails Tutorial](http://railstutorial.org/)
